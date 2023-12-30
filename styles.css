@@ -76,6 +76,11 @@ body {
         background-image: var(--switch-bg-url);
         background-repeat: no-repeat;
         background-position: center;
+        animation: slideBack 0.4s;
+    }
+
+    >button:hover {
+        outline: 8px solid var(--highlight-color);
     }
 
     > span {
@@ -89,8 +94,7 @@ body {
 }
 
 .light .switch button {
-    left: initial;
-    right: 0;
+    animation: slideIn 0.4s forwards;
 }
 
 .links {
@@ -156,5 +160,21 @@ footer {
 
     .light {
         --bg-url: url("./assets/bg-desktop-light.jpg")
+    }
+}
+
+@keyframes slideIn {
+    from {
+        left: 0;
+    } to {
+        left: 50%;
+    }
+}
+
+@keyframes slideBack {
+    from {
+        left: 50%;
+    } to {
+        left: 0;
     }
 }
